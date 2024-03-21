@@ -3,8 +3,6 @@ from tensorflow import keras
 from sklearn.preprocessing import MinMaxScaler
 import preprocessing
 
-import numpy as np
-
 # Import training set from preprocessed data
 x_train = preprocessing.x_train
 y_train = preprocessing.y_train
@@ -18,7 +16,6 @@ model.add(keras.layers.LSTM(units=64))
 model.add(keras.layers.Dense(32))
 model.add(keras.layers.Dropout(0.5))
 model.add(keras.layers.Dense(1))
-model.summary()
 
 # Model compilation and training
 model.compile(optimizer='adam',
@@ -35,8 +32,3 @@ y_test = preprocessing.y_test
 scaler = preprocessing.scaler
 predictions = model.predict(x_test)
 predictions = scaler.inverse_transform(predictions)
- 
-# Calculate the evaluation metrics for this data
-mse = np.mean(((predictions - y_test) ** 2))
-print("MSE", mse)
-print("RMSE", np.sqrt(mse))

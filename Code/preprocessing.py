@@ -4,8 +4,6 @@ from sklearn.preprocessing import MinMaxScaler
 
 # Load the dataset into a pandas dataframe
 data = pd.read_csv('../sp500_stocks.csv')
-print(data.shape)
-print(data.sample(7))
 
 # Convert 'Date' column from the object date type to DateTime data type
 data['Date'] = pd.to_datetime(data['Date'])
@@ -14,9 +12,9 @@ data['Date'] = pd.to_datetime(data['Date'])
 data = data.dropna()
 
 # Filter data on adjusted closing values of stocks of one firm and select training amount
-firm = str(input("Please input the ticker of a firm on the S&P500: "))
-firm = data[data['Symbol'] == firm]
-close_data = firm.filter(['Adj Close'])
+firm_name = str(input("Please input the ticker of a firm on the S&P500: "))
+firm_data = data[data['Symbol'] == firm_name]
+close_data = firm_data.filter(['Adj Close'])
 close_data = close_data.values
 training = int(np.ceil(len(close_data) * 0.8))
 
