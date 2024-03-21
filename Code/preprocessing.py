@@ -35,8 +35,8 @@ x_test = []
 y_test = []
 
 # Add data values to features and labels (for training)
-for i in range(7, len(train_data)):
-    x_train.append(train_data[i-7:i, 0])
+for i in range(14, len(train_data)):
+    x_train.append(train_data[i-14:i, 0])
     y_train.append(train_data[i, 0])
 
 # Add data values to features and labels (for testing)
