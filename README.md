@@ -64,7 +64,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://github.com/FowwazM/Stock-Price-Predictor/)
 
-This is a stock price predictor built in Python using Tensorflow. I have used deep learning, specifically a recurrent neural network in LSTM-gated cells, for this model. The model is trained on a dataset of S&P 500 stock prices every day since 2010 (link in <a href="#acknowledgments">acknowledgments</a>). You have to input the stock you want to predict prices for when running the program, and a graph with the prices since 2010 will be shown (split into training data, test data, and model predictions).
+This is a stock price predictor built in Python using Tensorflow. I have used deep learning, specifically a recurrent neural network in LSTM-gated cells, for this model. The model is trained on a dataset of S&P 500 stock prices every day since 2010 (link in <a href="#acknowledgments">acknowledgments</a>) and achieved an accuracy of 95.85% in my tests. You have to input the stock you want to predict prices for when running the program, and a graph with the prices since 2010 will be shown (split into training data, test data, and model predictions).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
