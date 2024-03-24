@@ -17,8 +17,10 @@ test.insert(1, 'Predictions', predictions)
 
 # Calculate the evaluation metrics for the predictions
 mse = np.mean(((predictions - y_test) ** 2))
+mape = np.round((np.mean((np.abs(y_test - predictions)/y_test)*100)),2)
 print("MSE", mse)
 print("RMSE", np.sqrt(mse))
+print("% Accuracy", (100 - mape))
 
 # Plot the training data along with predictions against testing data
 plt.figure(figsize=(10, 8))
