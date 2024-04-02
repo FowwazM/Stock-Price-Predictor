@@ -11,17 +11,11 @@ application=Flask(__name__)
 
 app=application
 
-# Route for a home page
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 # Route for the main page
-@app.route('/predict',methods=['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
-        return render_template('prediction_page.html')
-        print("PREDICT PAGE OPENED")
+        return render_template('index.html')
     else:
         ticker=request.form.get('ticker')
         
@@ -48,7 +42,7 @@ def predict_datapoint():
         pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
 
         # Render HTML page with model results
-        return render_template('prediction_page.html', error=mse, rooterror=rmse, acc=(100 - mape), image=pngImageB64String)
+        return render_template('index.html', error=mse, rooterror=rmse, acc=(100 - mape), image=pngImageB64String)
 
 if __name__=="__main__":      
     app.run(host='0.0.0.0', port=8080)
