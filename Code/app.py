@@ -44,5 +44,5 @@ def predict_datapoint():
         # Render HTML page with model results
         return render_template('index.html', error=mse, rooterror=rmse, acc=(100 - mape), image=pngImageB64String)
 
-if __name__=="__main__":      
+if __name__=="__main__":
     app.run(host='0.0.0.0', port=8080)
